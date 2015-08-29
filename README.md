@@ -1,4 +1,4 @@
-xdog-watcher
+dog-watcher
 ==============
 
 This project provides a simple means for capturing your DataDog dashboards and monitors as JSON and
