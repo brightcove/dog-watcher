@@ -1,0 +1,4 @@
+node_modules
+.idea
+config.json
+npm-debug.log
