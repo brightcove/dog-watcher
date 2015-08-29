@@ -1,6 +1,6 @@
 {
   "name": "dog-watcher",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "This is a utility for backing up DataDog objects to a separate git repo.",
   "main": "index.js",
   "scripts": {
