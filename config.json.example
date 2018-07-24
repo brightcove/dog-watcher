@@ -2,8 +2,12 @@
   "//": "Your DataDog keys.  They can be found in the DataDog UI under Integrations -> APIs",
   "dataDogApiKey": "yourApiKey",
   "dataDogAppKey": "yourAppKey",
+
   "//": "The ssh URL for a git repo where you want your DataDog JSON files stored.",
   "gitRepoForBackups": "git@github.com:your/backupRepo.git",
+
+  "//": "The git repo branch to use.",
+  "gitBranch": "master",
 
   "//": "(optional) Whether or not you want a DataDog event to be sent in the event that nothing ",
   "//": "has changed since the last git commit.",
