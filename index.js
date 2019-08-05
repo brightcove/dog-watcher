@@ -7,22 +7,35 @@
  */
 var later = require('later'),
   log4js = require('log4js'),
+  yargs = require('yargs'),
 
-  config = require('./config.json'),
-  backup = require('./lib/backup.js'),
+  logger = log4js.getLogger('dog-watcher');
 
-  logger = log4js.getLogger('dog-watcher'),
 
+const args = yargs
+    .option('config', {
+      alias: 'c',
+      description: 'config file',
+      default: 'config.json',
+      type: 'string'
+    })
+    .argv;
+
+const config = require(`./${args.config}`);
+console.log(config);
+const backup = require('./lib/backup.js')(config);
+
+const
   apiKey = config.dataDogApiKey,
   appKey = config.dataDogAppKey,
   repo = config.gitRepoForBackups,
-  backupInterval = config.backupInterval,
-  backupSchedule,
+  backupInterval = config.backupInterval;
+let backupSchedule;
 
   /**
    * Make sure the config file has DataDog keys and a destination repo.
    */
-  validateConfig = function() {
+const validateConfig = function() {
     if (!apiKey || !appKey) {
       logger.error('You must provide DataDog keys in the config.json file.');
       process.exit(1);
@@ -42,7 +55,7 @@ var later = require('later'),
     }
   };
 
-logger.setLevel(process.env.LOG_LEVEL || 'INFO');
+logger.level = process.env.LOG_LEVEL || 'INFO';
 validateConfig();
 
 if (backupInterval) {
