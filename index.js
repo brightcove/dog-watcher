@@ -22,7 +22,6 @@ const args = yargs
     .argv;
 
 const config = require(`./${args.config}`);
-console.log(config);
 const backup = require('./lib/backup.js')(config);
 
 const
