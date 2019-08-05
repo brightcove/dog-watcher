@@ -12,6 +12,8 @@ To use this project:
 1. npm install
 1. node index.js
 
+If you wish to name a different config file you can specify an alternate using ```--config file.json```.  It is assumed to be the base directory.
+
 That's all.  Dashboards and monitors will be retrieved and committed to the git repo that you
 specified in the config file.
 
