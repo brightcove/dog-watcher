@@ -5,6 +5,9 @@
   "//": "The ssh URL for a git repo where you want your DataDog JSON files stored.",
   "gitRepoForBackups": "git@github.com:your/backupRepo.git",
 
+  "//": "(optional) Branch to use if not the default ('master').",
+  "gitBranchForBackups": "main",
+
   "//": "(optional) Whether or not you want a DataDog event to be sent in the event that nothing ",
   "//": "has changed since the last git commit.",
   "sendEventOnNoop": "false",
